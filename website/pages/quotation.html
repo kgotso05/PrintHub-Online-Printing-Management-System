@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>PrintHub</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="tracking.html">Track Order</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li>
+                    <a href="register.html" class="btn btn-outline">
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <p>ONLINE QUOTATION</p>
+            <h2>Get a Printing Quote</h2>
+            <span>
+                Select your printing requirements and upload your
+                design to receive an estimated quotation.
+            </span>
+        </div>
+    </section>
+
+    <section class="quotation-section">
+
+        <div class="container quotation-layout">
+
+            <form id="quotationForm" class="quote-form">
+
+                <h3>Printing Specifications</h3>
+
+                <div class="form-group">
+                    <label for="quoteService">Printing Service</label>
+
+                    <select id="quoteService" required>
+                        <option value="">Select service</option>
+                        <option value="5">A4 Colour Printing</option>
+                        <option value="2">Black & White Printing</option>
+                        <option value="35">Spiral Binding</option>
+                        <option value="150">Business Cards</option>
+                        <option value="80">Poster Printing</option>
+                        <option value="100">Flyer Printing</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="quoteQuantity">Quantity</label>
+
+                        <input
+                            type="number"
+                            id="quoteQuantity"
+                            min="1"
+                            value="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paperSize">Paper Size</label>
+
+                        <select id="paperSize" required>
+                            <option value="">Select size</option>
+                            <option value="0">A4</option>
+                            <option value="10">A3</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="paperType">Paper Type</label>
+
+                        <select id="paperType" required>
+                            <option value="">Select paper type</option>
+                            <option value="0">Standard</option>
+                            <option value="2">Glossy</option>
+                            <option value="3">Premium</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="finishingOption">
+                            Finishing
+                        </label>
+
+                        <select id="finishingOption">
+                            <option value="0">None</option>
+                            <option value="15">Lamination</option>
+                            <option value="35">Spiral Binding</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="designFile">
+                        Upload Design
+                    </label>
+
+                    <div class="upload-box">
+
+                        <span class="upload-icon">📁</span>
+
+                        <p>
+                            Upload your printing file
+                        </p>
+
+                        <input
+                            type="file"
+                            id="designFile"
+                            accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                        >
+
+                        <small>
+                            Supported prototype formats:
+                            PDF, JPG, PNG, DOC and DOCX
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div id="fileInfo" class="file-info"></div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary full-button"
+                >
+                    Calculate Quote
+                </button>
+
+            </form>
+
+            <aside class="quotation-summary">
+
+                <h3>Quotation Summary</h3>
+
+                <div class="summary-row">
+                    <span>Service</span>
+                    <strong id="summaryService">
+                        Not selected
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Quantity</span>
+                    <strong id="summaryQuantity">
+                        0
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Paper Size</span>
+                    <strong id="summaryPaperSize">
+                        -
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Paper Type</span>
+                    <strong id="summaryPaperType">
+                        -
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Finishing</span>
+                    <strong id="summaryFinishing">
+                        None
+                    </strong>
+                </div>
+
+                <hr>
+
+                <div class="quote-total">
+                    <span>Estimated Total</span>
+                    <strong id="quoteTotal">
+                        R0.00
+                    </strong>
+                </div>
+
+                <p class="prototype-note">
+                    This is a prototype estimate. Final quotation
+                    calculations will be handled by the backend.
+                </p>
+
+                <a
+                    href="checkout.html"
+                    id="continueOrderButton"
+                    class="btn btn-secondary full-button disabled-link"
+                >
+                    Continue to Order
+                </a>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+
+        <div>
+            <h3>PrintHub</h3>
+            <p>Online Printing Management System</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub. All rights reserved.</p>
+
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

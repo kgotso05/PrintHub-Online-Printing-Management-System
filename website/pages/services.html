@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>PrintHub</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="tracking.html">Track Order</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li>
+                    <a href="register.html" class="btn btn-outline">
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <p>PRINTHUB SERVICES</p>
+            <h2>Professional Printing Services</h2>
+            <span>
+                Browse available services and choose the printing option
+                that best suits your needs.
+            </span>
+        </div>
+    </section>
+
+    <section class="service-browser">
+        <div class="container">
+
+            <div class="service-toolbar">
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="serviceSearch"
+                        placeholder="Search printing services..."
+                    >
+                </div>
+
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">
+                        All
+                    </button>
+
+                    <button class="category-btn" data-category="printing">
+                        Printing
+                    </button>
+
+                    <button class="category-btn" data-category="binding">
+                        Binding
+                    </button>
+
+                    <button class="category-btn" data-category="design">
+                        Design
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="services-grid" id="servicesGrid">
+
+                <article
+                    class="service-card service-item"
+                    data-category="printing"
+                    data-name="A4 Colour Printing"
+                >
+                    <div class="service-icon">📄</div>
+
+                    <h3>A4 Colour Printing</h3>
+
+                    <p>
+                        High-quality colour printing for documents,
+                        assignments, presentations and promotional material.
+                    </p>
+
+                    <span class="price">From R5.00 per page</span>
+
+                    <a
+                        href="service-details.html?service=a4-colour"
+                        class="service-link"
+                    >
+                        View Details →
+                    </a>
+                </article>
+
+                <article
+                    class="service-card service-item"
+                    data-category="printing"
+                    data-name="Black and White Printing"
+                >
+                    <div class="service-icon">🖨️</div>
+
+                    <h3>Black & White Printing</h3>
+
+                    <p>
+                        Affordable document printing for reports,
+                        notes, forms and academic documents.
+                    </p>
+
+                    <span class="price">From R2.00 per page</span>
+
+                    <a
+                        href="service-details.html?service=black-white"
+                        class="service-link"
+                    >
+                        View Details →
+                    </a>
+                </article>
+
+                <article
+                    class="service-card service-item"
+                    data-category="binding"
+                    data-name="Spiral Binding"
+                >
+                    <div class="service-icon">📚</div>
+
+                    <h3>Spiral Binding</h3>
+
+                    <p>
+                        Professional binding for assignments,
+                        reports, manuals and business documents.
+                    </p>
+
+                    <span class="price">From R35.00</span>
+
+                    <a
+                        href="service-details.html?service=spiral-binding"
+                        class="service-link"
+                    >
+                        View Details →
+                    </a>
+                </article>
+
+                <article
+                    class="service-card service-item"
+                    data-category="design"
+                    data-name="Business Cards"
+                >
+                    <div class="service-icon">💳</div>
+
+                    <h3>Business Cards</h3>
+
+                    <p>
+                        Professional business-card printing for
+                        individuals, businesses and organisations.
+                    </p>
+
+                    <span class="price">From R150.00</span>
+
+                    <a
+                        href="service-details.html?service=business-cards"
+                        class="service-link"
+                    >
+                        View Details →
+                    </a>
+                </article>
+
+                <article
+                    class="service-card service-item"
+                    data-category="printing"
+                    data-name="Poster Printing"
+                >
+                    <div class="service-icon">🖼️</div>
+
+                    <h3>Poster Printing</h3>
+
+                    <p>
+                        Full-colour poster printing suitable for
+                        events, promotions and presentations.
+                    </p>
+
+                    <span class="price">From R80.00</span>
+
+                    <a
+                        href="service-details.html?service=poster"
+                        class="service-link"
+                    >
+                        View Details →
+                    </a>
+                </article>
+
+                <article
+                    class="service-card service-item"
+                    data-category="design"
+                    data-name="Flyer Printing"
+                >
+                    <div class="service-icon">📃</div>
+
+                    <h3>Flyer Printing</h3>
+
+                    <p>
+                        Promotional flyer printing for events,
+                        advertising and business marketing.
+                    </p>
+
+                    <span class="price">From R100.00</span>
+
+                    <a
+                        href="service-details.html?service=flyers"
+                        class="service-link"
+                    >
+                        View Details →
+                    </a>
+                </article>
+
+            </div>
+
+            <div id="noServicesMessage" class="no-results">
+                No services match your search.
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div>
+            <h3>PrintHub</h3>
+            <p>Online Printing Management System</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
