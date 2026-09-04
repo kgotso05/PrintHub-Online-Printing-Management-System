@@ -4,25 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrintHub | Online Printing Management System</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>PrintHub</h1>
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>PrintHub</h1>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/services.html">Services</a></li>
+                    <li><a href="pages/tracking.html">Track Order</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
+                    <li>
+                        <a href="pages/register.html" class="btn btn-outline">
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h2>Printing Made Simple</h2>
-        <p>
-            Browse printing services, upload your designs,
-            request quotations and track your orders online.
-        </p>
+
+        <section class="hero">
+            <div class="container hero-content">
+
+                <div class="hero-text">
+                    <p class="hero-label">ONLINE PRINTING MANAGEMENT</p>
+
+                    <h2>Printing Made Simple</h2>
+
+                    <p>
+                        Browse printing services, upload your designs,
+                        request instant quotations and track your printing
+                        orders from one convenient platform.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="pages/services.html" class="btn btn-primary">
+                            Browse Services
+                        </a>
+
+                        <a href="pages/quotation.html" class="btn btn-secondary">
+                            Get a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="print-card">
+                        <span class="print-icon">🖨️</span>
+                        <h3>Your Printing. Your Way.</h3>
+                        <p>
+                            Upload your files and let PrintHub simplify
+                            your printing experience.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="services-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p>WHAT WE OFFER</p>
+                    <h2>Our Printing Services</h2>
+                    <span>
+                        Choose from a range of professional printing services.
+                    </span>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="service-icon">📄</div>
+                        <h3>A4 Colour Printing</h3>
+                        <p>
+                            High-quality colour printing for documents,
+                            presentations and promotional material.
+                        </p>
+                        <span class="price">From R5.00</span>
+                        <a href="pages/services.html">View Service →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📚</div>
+                        <h3>Spiral Binding</h3>
+                        <p>
+                            Professional spiral binding for reports,
+                            assignments and business documents.
+                        </p>
+                        <span class="price">From R35.00</span>
+                        <a href="pages/services.html">View Service →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">💳</div>
+                        <h3>Business Cards</h3>
+                        <p>
+                            Professionally printed business cards for
+                            individuals and organisations.
+                        </p>
+                        <span class="price">From R150.00</span>
+                        <a href="pages/services.html">View Service →</a>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="how-section" id="how-it-works">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p>QUICK & EASY</p>
+                    <h2>How PrintHub Works</h2>
+                </div>
+
+                <div class="steps-grid">
+
+                    <div class="step">
+                        <span>1</span>
+                        <h3>Choose a Service</h3>
+                        <p>
+                            Browse available printing services and
+                            select the service you need.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <span>2</span>
+                        <h3>Upload Your Design</h3>
+                        <p>
+                            Upload the document or image that you
+                            would like to have printed.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <span>3</span>
+                        <h3>Get a Quote</h3>
+                        <p>
+                            Select your specifications and receive
+                            an estimated printing cost.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <span>4</span>
+                        <h3>Place & Track Order</h3>
+                        <p>
+                            Confirm your order and follow its
+                            progress through PrintHub.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="cta-section">
+            <div class="container cta-content">
+                <div>
+                    <h2>Ready to start printing?</h2>
+                    <p>
+                        Create your PrintHub account and manage your
+                        printing orders online.
+                    </p>
+                </div>
+
+                <a href="pages/register.html" class="btn btn-light">
+                    Create Account
+                </a>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 PrintHub</p>
+    <footer class="main-footer">
+        <div class="container footer-content">
+
+            <div>
+                <h3>PrintHub</h3>
+                <p>Online Printing Management System</p>
+            </div>
+
+            <div>
+                <p>&copy; 2026 PrintHub. All rights reserved.</p>
+            </div>
+
+        </div>
     </footer>
+
+    <script src="js/main.js"></script>
 
 </body>
 </html>
