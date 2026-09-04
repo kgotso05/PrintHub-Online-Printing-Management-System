@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>PrintHub</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <p>CHECKOUT</p>
+            <h2>Confirm Your Printing Order</h2>
+            <span>
+                Review your order details and complete the prototype payment.
+            </span>
+        </div>
+    </section>
+
+    <section class="checkout-section">
+
+        <div class="container checkout-layout">
+
+            <div class="checkout-main">
+
+                <section class="checkout-card">
+
+                    <h3>Customer Details</h3>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="checkoutFirstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutFirstName"
+                                value="Customer"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutLastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutLastName"
+                                value="Example"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkoutEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="checkoutEmail"
+                            value="customer@example.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkoutPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="checkoutPhone"
+                            value="0712345678"
+                            required
+                        >
+                    </div>
+
+                </section>
+
+                <section class="checkout-card">
+
+                    <h3>Collection / Delivery Option</h3>
+
+                    <div class="delivery-options">
+
+                        <label class="delivery-option">
+
+                            <input
+                                type="radio"
+                                name="deliveryMethod"
+                                value="collection"
+                                checked
+                            >
+
+                            <div>
+                                <strong>Collect from PrintHub</strong>
+                                <p>
+                                    Collect your order once it is marked ready.
+                                </p>
+                            </div>
+
+                        </label>
+
+                        <label class="delivery-option">
+
+                            <input
+                                type="radio"
+                                name="deliveryMethod"
+                                value="delivery"
+                            >
+
+                            <div>
+                                <strong>Delivery</strong>
+                                <p>
+                                    Delivery functionality will be integrated
+                                    during backend implementation.
+                                </p>
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                    <div
+                        id="deliveryAddressSection"
+                        class="form-group hidden"
+                    >
+
+                        <label for="deliveryAddress">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="deliveryAddress"
+                            rows="4"
+                            placeholder="Enter delivery address"
+                        ></textarea>
+
+                    </div>
+
+                </section>
+
+                <section class="checkout-card">
+
+                    <h3>Payment Method</h3>
+
+                    <div class="payment-methods">
+
+                        <label class="payment-method active-payment">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="card"
+                                checked
+                            >
+
+                            <span>💳</span>
+
+                            <div>
+                                <strong>Card Payment</strong>
+                                <p>
+                                    Prototype card payment interface
+                                </p>
+                            </div>
+
+                        </label>
+
+                        <label class="payment-method">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="eft"
+                            >
+
+                            <span>🏦</span>
+
+                            <div>
+                                <strong>EFT</strong>
+                                <p>
+                                    Electronic funds transfer
+                                </p>
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                    <div id="cardPaymentFields">
+
+                        <div class="form-group">
+                            <label for="cardName">
+                                Name on Card
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cardName"
+                                placeholder="Customer Example"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardNumber">
+                                Card Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cardNumber"
+                                maxlength="19"
+                                placeholder="1234 5678 9012 3456"
+                            >
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="expiryDate">
+                                    Expiry Date
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="expiryDate"
+                                    maxlength="5"
+                                    placeholder="MM/YY"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cvv">
+                                    CVV
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="cvv"
+                                    maxlength="3"
+                                    placeholder="123"
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="eftFields" class="eft-details hidden">
+
+                        <h4>PrintHub Banking Details</h4>
+
+                        <p>
+                            Bank: Prototype Bank
+                        </p>
+
+                        <p>
+                            Account Name: PrintHub
+                        </p>
+
+                        <p>
+                            Account Number: 0000000000
+                        </p>
+
+                        <p>
+                            Reference: Your Order Number
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <aside class="checkout-summary">
+
+                <h3>Order Summary</h3>
+
+                <div class="checkout-product">
+
+                    <div>
+                        <strong>A4 Colour Printing</strong>
+                        <p>50 pages × R5.00</p>
+                    </div>
+
+                    <strong>R250.00</strong>
+
+                </div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong>R250.00</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <strong id="deliveryPrice">
+                        R0.00
+                    </strong>
+                </div>
+
+                <hr>
+
+                <div class="quote-total">
+                    <span>Total</span>
+                    <strong id="checkoutTotal">
+                        R250.00
+                    </strong>
+                </div>
+
+                <p class="prototype-note">
+                    No real payment is processed at this prototype stage.
+                    Secure payment integration will be connected during
+                    system implementation.
+                </p>
+
+                <button
+                    type="button"
+                    id="placeOrderButton"
+                    class="btn btn-primary full-button"
+                >
+                    Place Order
+                </button>
+
+                <a
+                    href="quotation.html"
+                    class="btn btn-secondary full-button"
+                >
+                    Back to Quote
+                </a>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+    <div id="orderSuccessModal" class="modal">
+
+        <div class="modal-content success-modal">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Order Placed Successfully</h2>
+
+            <p>
+                Your PrintHub prototype order has been created.
+            </p>
+
+            <div class="success-order-number">
+                <small>ORDER NUMBER</small>
+                <strong>#PH004</strong>
+            </div>
+
+            <div class="success-actions">
+
+                <a
+                    href="tracking.html?id=PH004"
+                    class="btn btn-primary"
+                >
+                    Track Order
+                </a>
+
+                <a
+                    href="dashboard.html"
+                    class="btn btn-secondary"
+                >
+                    Go to Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+
+        <div>
+            <h3>PrintHub</h3>
+            <p>Online Printing Management System</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub. All rights reserved.</p>
+
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

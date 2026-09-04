@@ -385,7 +385,14 @@ const prototypeOrders = {
         date: "27 Aug 2026",
         total: "R450.00",
         status: "Completed"
-    }
+    },
+    PH004: {
+    service: "A4 Colour Printing",
+    quantity: 50,
+    date: "04 Sep 2026",
+    total: "R250.00",
+    status: "Processing"
+}
 };
 
 const orderModal =
@@ -646,6 +653,242 @@ function updateTrackingProgress(status) {
             "completed-step"
         );
     }
+}
+// Checkout prototype
+
+const deliveryMethods =
+    document.querySelectorAll(
+        'input[name="deliveryMethod"]'
+    );
+
+const deliveryAddressSection =
+    document.getElementById(
+        "deliveryAddressSection"
+    );
+
+const deliveryPrice =
+    document.getElementById(
+        "deliveryPrice"
+    );
+
+const checkoutTotal =
+    document.getElementById(
+        "checkoutTotal"
+    );
+
+deliveryMethods.forEach((method) => {
+
+    method.addEventListener("change", () => {
+
+        if (method.checked) {
+
+            if (method.value === "delivery") {
+
+                deliveryAddressSection.classList.remove(
+                    "hidden"
+                );
+
+                deliveryPrice.textContent =
+                    "R80.00";
+
+                checkoutTotal.textContent =
+                    "R330.00";
+
+            } else {
+
+                deliveryAddressSection.classList.add(
+                    "hidden"
+                );
+
+                deliveryPrice.textContent =
+                    "R0.00";
+
+                checkoutTotal.textContent =
+                    "R250.00";
+            }
+        }
+    });
+});
+
+
+const paymentMethods =
+    document.querySelectorAll(
+        'input[name="paymentMethod"]'
+    );
+
+const cardPaymentFields =
+    document.getElementById(
+        "cardPaymentFields"
+    );
+
+const eftFields =
+    document.getElementById(
+        "eftFields"
+    );
+
+paymentMethods.forEach((method) => {
+
+    method.addEventListener("change", () => {
+
+        document
+            .querySelectorAll(".payment-method")
+            .forEach((option) =>
+                option.classList.remove(
+                    "active-payment"
+                )
+            );
+
+        method
+            .closest(".payment-method")
+            .classList.add(
+                "active-payment"
+            );
+
+        if (method.value === "eft") {
+
+            cardPaymentFields.classList.add(
+                "hidden"
+            );
+
+            eftFields.classList.remove(
+                "hidden"
+            );
+
+        } else {
+
+            cardPaymentFields.classList.remove(
+                "hidden"
+            );
+
+            eftFields.classList.add(
+                "hidden"
+            );
+        }
+    });
+});
+
+
+const cardNumber =
+    document.getElementById(
+        "cardNumber"
+    );
+
+if (cardNumber) {
+
+    cardNumber.addEventListener(
+        "input",
+        (event) => {
+
+            let value =
+                event.target.value
+                    .replace(/\D/g, "")
+                    .substring(0, 16);
+
+            value =
+                value.replace(
+                    /(\d{4})(?=\d)/g,
+                    "$1 "
+                );
+
+            event.target.value =
+                value;
+        }
+    );
+}
+
+
+const expiryDate =
+    document.getElementById(
+        "expiryDate"
+    );
+
+if (expiryDate) {
+
+    expiryDate.addEventListener(
+        "input",
+        (event) => {
+
+            let value =
+                event.target.value
+                    .replace(/\D/g, "")
+                    .substring(0, 4);
+
+            if (value.length > 2) {
+
+                value =
+                    value.substring(0, 2) +
+                    "/" +
+                    value.substring(2);
+            }
+
+            event.target.value =
+                value;
+        }
+    );
+}
+
+
+const placeOrderButton =
+    document.getElementById(
+        "placeOrderButton"
+    );
+
+const orderSuccessModal =
+    document.getElementById(
+        "orderSuccessModal"
+    );
+
+if (
+    placeOrderButton &&
+    orderSuccessModal
+) {
+
+    placeOrderButton.addEventListener(
+        "click",
+        () => {
+
+            const firstName =
+                document
+                    .getElementById(
+                        "checkoutFirstName"
+                    )
+                    .value
+                    .trim();
+
+            const lastName =
+                document
+                    .getElementById(
+                        "checkoutLastName"
+                    )
+                    .value
+                    .trim();
+
+            const email =
+                document
+                    .getElementById(
+                        "checkoutEmail"
+                    )
+                    .value
+                    .trim();
+
+            if (
+                !firstName ||
+                !lastName ||
+                !email
+            ) {
+
+                alert(
+                    "Please complete your customer details before placing the order."
+                );
+
+                return;
+            }
+
+            orderSuccessModal.classList.add(
+                "active"
+            );
+        }
+    );
 }
 
 });
