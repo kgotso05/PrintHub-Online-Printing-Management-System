@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>PrintHub</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li>
+                    <a href="tracking.html" class="active">
+                        Track Order
+                    </a>
+                </li>
+                <li><a href="login.html">Login</a></li>
+                <li>
+                    <a href="register.html" class="btn btn-outline">
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <p>ORDER TRACKING</p>
+            <h2>Track Your Printing Order</h2>
+            <span>
+                Enter your PrintHub Order ID to view its current status.
+            </span>
+        </div>
+    </section>
+
+    <section class="tracking-section">
+
+        <div class="container tracking-container">
+
+            <form id="trackingForm" class="tracking-search">
+
+                <label for="trackingId">Order ID</label>
+
+                <div class="tracking-input">
+
+                    <input
+                        type="text"
+                        id="trackingId"
+                        placeholder="Example: PH001"
+                        required
+                    >
+
+                    <button type="submit" class="btn btn-primary">
+                        Track Order
+                    </button>
+
+                </div>
+
+                <small>
+                    Prototype Order IDs: PH001, PH002 and PH003
+                </small>
+
+            </form>
+
+            <div id="trackingResult" class="tracking-result hidden">
+
+                <div class="tracking-summary">
+
+                    <div>
+                        <p>ORDER NUMBER</p>
+                        <h3 id="trackingOrderNumber">
+                            #PH001
+                        </h3>
+                    </div>
+
+                    <div>
+                        <p>CURRENT STATUS</p>
+                        <span
+                            id="trackingStatus"
+                            class="status status-processing"
+                        >
+                            Processing
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="tracking-details-grid">
+
+                    <div>
+                        <small>Service</small>
+                        <strong id="trackingService">
+                            A4 Colour Printing
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Order Date</small>
+                        <strong id="trackingDate">
+                            04 Sep 2026
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Total</small>
+                        <strong id="trackingTotal">
+                            R250.00
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="tracking-progress">
+
+                    <div class="tracking-step completed-step">
+                        <div class="tracking-dot">✓</div>
+
+                        <div>
+                            <h4>Order Received</h4>
+                            <p>
+                                Your PrintHub order has been received.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tracking-line active-line"></div>
+
+                    <div
+                        class="tracking-step completed-step"
+                        id="paymentStep"
+                    >
+                        <div class="tracking-dot">✓</div>
+
+                        <div>
+                            <h4>Payment Confirmed</h4>
+                            <p>
+                                Payment has been successfully confirmed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tracking-line active-line"
+                        id="processingLine"
+                    ></div>
+
+                    <div
+                        class="tracking-step current-step"
+                        id="processingStep"
+                    >
+                        <div class="tracking-dot">3</div>
+
+                        <div>
+                            <h4>Processing</h4>
+                            <p>
+                                Your printing job is currently being processed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tracking-line" id="readyLine"></div>
+
+                    <div class="tracking-step" id="readyStep">
+                        <div class="tracking-dot">4</div>
+
+                        <div>
+                            <h4>Ready</h4>
+                            <p>
+                                Your printing order is ready.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tracking-line" id="completeLine"></div>
+
+                    <div class="tracking-step" id="completeStep">
+                        <div class="tracking-dot">5</div>
+
+                        <div>
+                            <h4>Completed</h4>
+                            <p>
+                                The printing order has been completed.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="trackingError"
+                class="form-message error-message hidden"
+            >
+                Order not found. Please check your Order ID.
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div>
+            <h3>PrintHub</h3>
+            <p>Online Printing Management System</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

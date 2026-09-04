@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>PrintHub</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="orders.html" class="active">My Orders</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <p>MY PRINTHUB</p>
+            <h2>My Orders</h2>
+            <span>
+                View active and previous printing orders.
+            </span>
+        </div>
+    </section>
+
+    <section class="orders-section">
+
+        <div class="container">
+
+            <div class="orders-toolbar">
+
+                <div class="order-tabs">
+                    <button class="order-tab active" data-order-filter="all">
+                        All Orders
+                    </button>
+
+                    <button class="order-tab" data-order-filter="active">
+                        Active
+                    </button>
+
+                    <button class="order-tab" data-order-filter="completed">
+                        Completed
+                    </button>
+                </div>
+
+                <input
+                    type="text"
+                    id="orderSearch"
+                    placeholder="Search order ID..."
+                >
+
+            </div>
+
+            <div class="order-list">
+
+                <article
+                    class="order-card"
+                    data-order-status="active"
+                    data-order-id="PH001"
+                >
+
+                    <div class="order-card-top">
+                        <div>
+                            <small>ORDER</small>
+                            <h3>#PH001</h3>
+                        </div>
+
+                        <span class="status status-processing">
+                            Processing
+                        </span>
+                    </div>
+
+                    <div class="order-card-details">
+
+                        <div>
+                            <small>Service</small>
+                            <strong>A4 Colour Printing</strong>
+                        </div>
+
+                        <div>
+                            <small>Placed</small>
+                            <strong>04 Sep 2026</strong>
+                        </div>
+
+                        <div>
+                            <small>Total</small>
+                            <strong>R250.00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="order-card-actions">
+                        <a
+                            href="tracking.html?id=PH001"
+                            class="btn btn-primary"
+                        >
+                            Track Order
+                        </a>
+
+                        <button
+                            class="btn btn-secondary details-button"
+                            data-order="PH001"
+                        >
+                            View Details
+                        </button>
+                    </div>
+
+                </article>
+
+                <article
+                    class="order-card"
+                    data-order-status="active"
+                    data-order-id="PH002"
+                >
+
+                    <div class="order-card-top">
+                        <div>
+                            <small>ORDER</small>
+                            <h3>#PH002</h3>
+                        </div>
+
+                        <span class="status status-ready">
+                            Ready
+                        </span>
+                    </div>
+
+                    <div class="order-card-details">
+
+                        <div>
+                            <small>Service</small>
+                            <strong>Spiral Binding</strong>
+                        </div>
+
+                        <div>
+                            <small>Placed</small>
+                            <strong>02 Sep 2026</strong>
+                        </div>
+
+                        <div>
+                            <small>Total</small>
+                            <strong>R180.00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="order-card-actions">
+                        <a
+                            href="tracking.html?id=PH002"
+                            class="btn btn-primary"
+                        >
+                            Track Order
+                        </a>
+
+                        <button
+                            class="btn btn-secondary details-button"
+                            data-order="PH002"
+                        >
+                            View Details
+                        </button>
+                    </div>
+
+                </article>
+
+                <article
+                    class="order-card"
+                    data-order-status="completed"
+                    data-order-id="PH003"
+                >
+
+                    <div class="order-card-top">
+                        <div>
+                            <small>ORDER</small>
+                            <h3>#PH003</h3>
+                        </div>
+
+                        <span class="status status-completed">
+                            Completed
+                        </span>
+                    </div>
+
+                    <div class="order-card-details">
+
+                        <div>
+                            <small>Service</small>
+                            <strong>Business Cards</strong>
+                        </div>
+
+                        <div>
+                            <small>Placed</small>
+                            <strong>27 Aug 2026</strong>
+                        </div>
+
+                        <div>
+                            <small>Total</small>
+                            <strong>R450.00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="order-card-actions">
+                        <button
+                            class="btn btn-secondary details-button"
+                            data-order="PH003"
+                        >
+                            View Details
+                        </button>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div id="noOrdersMessage" class="no-results">
+                No orders match your current filter.
+            </div>
+
+        </div>
+    </section>
+
+    <div id="orderModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                id="closeOrderModal"
+                type="button"
+            >
+                ×
+            </button>
+
+            <h2>Order Details</h2>
+
+            <div id="modalOrderContent">
+                <p>Select an order to view its details.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div>
+            <h3>PrintHub</h3>
+            <p>Online Printing Management System</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

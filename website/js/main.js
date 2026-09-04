@@ -275,6 +275,378 @@ if (quotationForm) {
         }
     );
 }
+// Order filtering
+
+const orderTabs =
+    document.querySelectorAll(".order-tab");
+
+const orderCards =
+    document.querySelectorAll(".order-card");
+
+const orderSearch =
+    document.getElementById("orderSearch");
+
+const noOrdersMessage =
+    document.getElementById("noOrdersMessage");
+
+let currentOrderFilter = "all";
+
+function filterOrders() {
+
+    if (orderCards.length === 0) {
+        return;
+    }
+
+    const searchValue =
+        orderSearch
+            ? orderSearch.value.toLowerCase().trim()
+            : "";
+
+    let visibleCount = 0;
+
+    orderCards.forEach((card) => {
+
+        const status =
+            card.dataset.orderStatus;
+
+        const orderId =
+            card.dataset.orderId.toLowerCase();
+
+        const matchesStatus =
+            currentOrderFilter === "all" ||
+            status === currentOrderFilter;
+
+        const matchesSearch =
+            orderId.includes(searchValue);
+
+        if (matchesStatus && matchesSearch) {
+            card.style.display = "block";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    if (noOrdersMessage) {
+        noOrdersMessage.style.display =
+            visibleCount === 0 ? "block" : "none";
+    }
+}
+
+orderTabs.forEach((tab) => {
+
+    tab.addEventListener("click", () => {
+
+        orderTabs.forEach((item) =>
+            item.classList.remove("active")
+        );
+
+        tab.classList.add("active");
+
+        currentOrderFilter =
+            tab.dataset.orderFilter;
+
+        filterOrders();
+    });
+});
+
+if (orderSearch) {
+
+    orderSearch.addEventListener(
+        "input",
+        filterOrders
+    );
+}
+
+
+// Prototype order details
+
+const prototypeOrders = {
+
+    PH001: {
+        service: "A4 Colour Printing",
+        quantity: 50,
+        date: "04 Sep 2026",
+        total: "R250.00",
+        status: "Processing"
+    },
+
+    PH002: {
+        service: "Spiral Binding",
+        quantity: 3,
+        date: "02 Sep 2026",
+        total: "R180.00",
+        status: "Ready"
+    },
+
+    PH003: {
+        service: "Business Cards",
+        quantity: 100,
+        date: "27 Aug 2026",
+        total: "R450.00",
+        status: "Completed"
+    }
+};
+
+const orderModal =
+    document.getElementById("orderModal");
+
+const modalOrderContent =
+    document.getElementById("modalOrderContent");
+
+document.querySelectorAll(
+    ".details-button"
+).forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const id =
+            button.dataset.order;
+
+        const order =
+            prototypeOrders[id];
+
+        if (!order || !orderModal) {
+            return;
+        }
+
+        modalOrderContent.innerHTML = `
+            <p><strong>Order:</strong> #${id}</p>
+            <p><strong>Service:</strong> ${order.service}</p>
+            <p><strong>Quantity:</strong> ${order.quantity}</p>
+            <p><strong>Date:</strong> ${order.date}</p>
+            <p><strong>Total:</strong> ${order.total}</p>
+            <p><strong>Status:</strong> ${order.status}</p>
+        `;
+
+        orderModal.classList.add("active");
+    });
+});
+
+const closeOrderModal =
+    document.getElementById("closeOrderModal");
+
+if (closeOrderModal && orderModal) {
+
+    closeOrderModal.addEventListener(
+        "click",
+        () => {
+            orderModal.classList.remove("active");
+        }
+    );
+}
+
+
+// Tracking prototype
+
+const trackingForm =
+    document.getElementById("trackingForm");
+
+if (trackingForm) {
+
+    trackingForm.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault();
+
+            const id =
+                document
+                    .getElementById("trackingId")
+                    .value
+                    .trim()
+                    .toUpperCase()
+                    .replace("#", "");
+
+            showTrackingResult(id);
+        }
+    );
+
+    const urlParams =
+        new URLSearchParams(window.location.search);
+
+    const urlOrderId =
+        urlParams.get("id");
+
+    if (urlOrderId) {
+
+        document.getElementById(
+            "trackingId"
+        ).value = urlOrderId;
+
+        showTrackingResult(
+            urlOrderId.toUpperCase()
+        );
+    }
+}
+
+function showTrackingResult(id) {
+
+    const order =
+        prototypeOrders[id];
+
+    const result =
+        document.getElementById(
+            "trackingResult"
+        );
+
+    const error =
+        document.getElementById(
+            "trackingError"
+        );
+
+    if (!order) {
+
+        result.classList.add("hidden");
+        error.classList.remove("hidden");
+
+        return;
+    }
+
+    error.classList.add("hidden");
+    result.classList.remove("hidden");
+
+    document.getElementById(
+        "trackingOrderNumber"
+    ).textContent = `#${id}`;
+
+    document.getElementById(
+        "trackingService"
+    ).textContent = order.service;
+
+    document.getElementById(
+        "trackingDate"
+    ).textContent = order.date;
+
+    document.getElementById(
+        "trackingTotal"
+    ).textContent = order.total;
+
+    const status =
+        document.getElementById(
+            "trackingStatus"
+        );
+
+    status.textContent =
+        order.status;
+
+    status.className = "status";
+
+    if (order.status === "Processing") {
+        status.classList.add(
+            "status-processing"
+        );
+    }
+
+    if (order.status === "Ready") {
+        status.classList.add(
+            "status-ready"
+        );
+    }
+
+    if (order.status === "Completed") {
+        status.classList.add(
+            "status-completed"
+        );
+    }
+
+    updateTrackingProgress(
+        order.status
+    );
+}
+
+function updateTrackingProgress(status) {
+
+    const processingStep =
+        document.getElementById(
+            "processingStep"
+        );
+
+    const readyStep =
+        document.getElementById(
+            "readyStep"
+        );
+
+    const completeStep =
+        document.getElementById(
+            "completeStep"
+        );
+
+    const readyLine =
+        document.getElementById(
+            "readyLine"
+        );
+
+    const completeLine =
+        document.getElementById(
+            "completeLine"
+        );
+
+    [
+        processingStep,
+        readyStep,
+        completeStep
+    ].forEach((element) => {
+
+        element.classList.remove(
+            "completed-step",
+            "current-step"
+        );
+    });
+
+    readyLine.classList.remove(
+        "active-line"
+    );
+
+    completeLine.classList.remove(
+        "active-line"
+    );
+
+    if (status === "Processing") {
+
+        processingStep.classList.add(
+            "current-step"
+        );
+    }
+
+    if (status === "Ready") {
+
+        processingStep.classList.add(
+            "completed-step"
+        );
+
+        readyLine.classList.add(
+            "active-line"
+        );
+
+        readyStep.classList.add(
+            "current-step"
+        );
+    }
+
+    if (status === "Completed") {
+
+        processingStep.classList.add(
+            "completed-step"
+        );
+
+        readyLine.classList.add(
+            "active-line"
+        );
+
+        readyStep.classList.add(
+            "completed-step"
+        );
+
+        completeLine.classList.add(
+            "active-line"
+        );
+
+        completeStep.classList.add(
+            "completed-step"
+        );
+    }
+}
 
 });
 
