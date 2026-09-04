@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>PrintHub</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+            <p>MY ACCOUNT</p>
+            <h2>Profile</h2>
+            <span>
+                View and update your PrintHub account information.
+            </span>
+        </div>
+    </section>
+
+    <section class="profile-section">
+
+        <div class="container profile-layout">
+
+            <aside class="profile-summary">
+
+                <div class="profile-avatar">
+                    C
+                </div>
+
+                <h3>Customer Example</h3>
+
+                <p>customer@example.com</p>
+
+                <span class="profile-role">
+                    Customer
+                </span>
+
+                <a
+                    href="orders.html"
+                    class="btn btn-secondary full-button"
+                >
+                    View My Orders
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-danger full-button"
+                >
+                    Logout
+                </button>
+
+            </aside>
+
+            <section class="profile-form-card">
+
+                <div class="profile-heading">
+                    <div>
+                        <h3>Personal Information</h3>
+                        <p>
+                            Keep your contact details up to date.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="editProfileButton"
+                        class="btn btn-secondary"
+                    >
+                        Edit Profile
+                    </button>
+                </div>
+
+                <form id="profileForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="profileFirstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileFirstName"
+                                value="Customer"
+                                disabled
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileLastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileLastName"
+                                value="Example"
+                                disabled
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="profileEmail"
+                            value="customer@example.com"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profilePhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="profilePhone"
+                            value="071 234 5678"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileAddress">
+                            Address
+                        </label>
+
+                        <textarea
+                            id="profileAddress"
+                            rows="4"
+                            disabled
+                        >123 Example Street, Johannesburg</textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="saveProfileButton"
+                        class="btn btn-primary hidden"
+                    >
+                        Save Changes
+                    </button>
+
+                    <div
+                        id="profileMessage"
+                        class="hidden"
+                    ></div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+
+        <div>
+            <h3>PrintHub</h3>
+            <p>Online Printing Management System</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub. All rights reserved.</p>
+
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

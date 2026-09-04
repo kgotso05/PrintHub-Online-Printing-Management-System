@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+
+        <div class="logo">
+            <h1>PrintHub</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="help.html" class="active">Help</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <div class="container">
+
+            <p>PRINTHUB SUPPORT</p>
+
+            <h2>How Can We Help?</h2>
+
+            <span>
+                Find answers to common questions about using PrintHub.
+            </span>
+
+        </div>
+    </section>
+
+    <section class="help-section">
+
+        <div class="container">
+
+            <div class="help-search">
+
+                <input
+                    type="text"
+                    id="helpSearch"
+                    placeholder="Search help topics..."
+                >
+
+            </div>
+
+            <div class="help-grid">
+
+                <article
+                    class="help-card"
+                    data-help-topic="account login register password"
+                >
+                    <span>👤</span>
+
+                    <h3>Account & Login</h3>
+
+                    <p>
+                        Learn how to register, login and manage
+                        your PrintHub account.
+                    </p>
+
+                </article>
+
+                <article
+                    class="help-card"
+                    data-help-topic="services printing quotation quote"
+                >
+                    <span>🖨️</span>
+
+                    <h3>Printing Services</h3>
+
+                    <p>
+                        Learn how to browse printing services
+                        and request quotations.
+                    </p>
+
+                </article>
+
+                <article
+                    class="help-card"
+                    data-help-topic="upload document files design"
+                >
+                    <span>📁</span>
+
+                    <h3>Uploading Files</h3>
+
+                    <p>
+                        Find information about uploading documents
+                        and printing designs.
+                    </p>
+
+                </article>
+
+                <article
+                    class="help-card"
+                    data-help-topic="orders order tracking status"
+                >
+                    <span>📦</span>
+
+                    <h3>Orders & Tracking</h3>
+
+                    <p>
+                        Learn how to place, view and track
+                        your printing orders.
+                    </p>
+
+                </article>
+
+                <article
+                    class="help-card"
+                    data-help-topic="payment card eft checkout"
+                >
+                    <span>💳</span>
+
+                    <h3>Payments</h3>
+
+                    <p>
+                        Understand PrintHub checkout and
+                        payment options.
+                    </p>
+
+                </article>
+
+                <article
+                    class="help-card"
+                    data-help-topic="contact support help assistance"
+                >
+                    <span>☎️</span>
+
+                    <h3>Contact Support</h3>
+
+                    <p>
+                        Need additional help? Contact the
+                        PrintHub support team.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <div
+                id="noHelpResults"
+                class="no-results"
+            >
+                No help topics match your search.
+            </div>
+
+            <section class="faq-section">
+
+                <div class="section-heading">
+                    <p>FAQ</p>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <article class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+                            How do I request a quotation?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Browse the available printing services,
+                                select Get a Quote, choose your printing
+                                specifications and upload your design.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+                            How do I track my order?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Open the Track Order page and enter your
+                                PrintHub order number, such as PH001.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+                            What files can I upload?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                The current prototype supports common
+                                document and image file types including
+                                PDF, JPG, PNG, DOC and DOCX.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+                            Are payments currently real?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                No. The current Task 1 checkout interface
+                                is a prototype and does not process real
+                                financial transactions.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="support-card">
+
+                <div>
+                    <h2>Still need help?</h2>
+
+                    <p>
+                        Send a message to the PrintHub support team.
+                    </p>
+                </div>
+
+                <form id="supportForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="supportName">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="supportName"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supportEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="supportEmail"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="supportSubject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="supportSubject"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="supportMessage">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="supportMessage"
+                            rows="5"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Send Message
+                    </button>
+
+                    <div
+                        id="supportMessageResult"
+                        class="hidden"
+                    ></div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+
+        <div>
+            <h3>PrintHub</h3>
+            <p>Online Printing Management System</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub. All rights reserved.</p>
+
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

@@ -1154,7 +1154,183 @@ if (serviceForm) {
         }
     );
 }
+// Profile prototype
 
+const editProfileButton =
+    document.getElementById("editProfileButton");
+
+const profileForm =
+    document.getElementById("profileForm");
+
+const saveProfileButton =
+    document.getElementById("saveProfileButton");
+
+const profileMessage =
+    document.getElementById("profileMessage");
+
+const profileInputs =
+    document.querySelectorAll(
+        "#profileForm input, #profileForm textarea"
+    );
+
+if (editProfileButton) {
+
+    editProfileButton.addEventListener("click", () => {
+
+        profileInputs.forEach((input) => {
+            input.disabled = false;
+        });
+
+        saveProfileButton.classList.remove("hidden");
+
+        editProfileButton.classList.add("hidden");
+    });
+}
+
+if (profileForm) {
+
+    profileForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        profileInputs.forEach((input) => {
+            input.disabled = true;
+        });
+
+        saveProfileButton.classList.add("hidden");
+
+        editProfileButton.classList.remove("hidden");
+
+        profileMessage.className =
+            "form-message success-message";
+
+        profileMessage.textContent =
+            "Profile changes saved in the prototype.";
+    });
+}
+
+
+const logoutButton =
+    document.getElementById("logoutButton");
+
+if (logoutButton) {
+
+    logoutButton.addEventListener("click", () => {
+
+        const confirmLogout =
+            confirm("Are you sure you want to logout?");
+
+        if (confirmLogout) {
+            window.location.href = "login.html";
+        }
+    });
+}
+
+
+// Help search
+
+const helpSearch =
+    document.getElementById("helpSearch");
+
+const helpCards =
+    document.querySelectorAll(".help-card");
+
+const noHelpResults =
+    document.getElementById("noHelpResults");
+
+if (helpSearch) {
+
+    helpSearch.addEventListener("input", () => {
+
+        const searchValue =
+            helpSearch.value.toLowerCase().trim();
+
+        let visibleCount = 0;
+
+        helpCards.forEach((card) => {
+
+            const topic =
+                card.dataset.helpTopic.toLowerCase();
+
+            const heading =
+                card.querySelector("h3")
+                    .textContent
+                    .toLowerCase();
+
+            if (
+                topic.includes(searchValue) ||
+                heading.includes(searchValue)
+            ) {
+
+                card.style.display = "block";
+                visibleCount++;
+
+            } else {
+
+                card.style.display = "none";
+            }
+        });
+
+        if (noHelpResults) {
+
+            noHelpResults.style.display =
+                visibleCount === 0
+                    ? "block"
+                    : "none";
+        }
+    });
+}
+
+
+// FAQ
+
+document.querySelectorAll(
+    ".faq-question"
+).forEach((question) => {
+
+    question.addEventListener("click", () => {
+
+        const faq =
+            question.closest(".faq-item");
+
+        faq.classList.toggle("active");
+
+        const symbol =
+            question.querySelector("span");
+
+        symbol.textContent =
+            faq.classList.contains("active")
+                ? "−"
+                : "+";
+    });
+});
+
+
+// Support prototype
+
+const supportForm =
+    document.getElementById("supportForm");
+
+if (supportForm) {
+
+    supportForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const result =
+            document.getElementById(
+                "supportMessageResult"
+            );
+
+        result.className =
+            "form-message success-message";
+
+        result.textContent =
+            "Your support message has been recorded in the prototype.";
+
+        supportForm.reset();
+    });
+}
 });
 
 
