@@ -890,6 +890,270 @@ if (
         }
     );
 }
+// Admin order status prototype
+
+document.querySelectorAll(
+    ".order-status-select"
+).forEach((select) => {
+
+    select.addEventListener("change", () => {
+
+        const row =
+            select.closest(
+                ".admin-order-row"
+            );
+
+        const statusCell =
+            row.querySelector(
+                ".status"
+            );
+
+        const value =
+            select.value;
+
+        statusCell.textContent =
+            value;
+
+        statusCell.className =
+            "status";
+
+        if (value === "Processing") {
+
+            statusCell.classList.add(
+                "status-processing"
+            );
+
+            row.dataset.adminStatus =
+                "processing";
+        }
+
+        if (value === "Ready") {
+
+            statusCell.classList.add(
+                "status-ready"
+            );
+
+            row.dataset.adminStatus =
+                "ready";
+        }
+
+        if (value === "Completed") {
+
+            statusCell.classList.add(
+                "status-completed"
+            );
+
+            row.dataset.adminStatus =
+                "completed";
+        }
+
+        if (value === "Pending") {
+
+            statusCell.classList.add(
+                "status-processing"
+            );
+
+            row.dataset.adminStatus =
+                "pending";
+        }
+    });
+});
+
+
+// Admin order filter
+
+const adminOrderSearch =
+    document.getElementById(
+        "adminOrderSearch"
+    );
+
+const adminStatusFilter =
+    document.getElementById(
+        "adminStatusFilter"
+    );
+
+const adminOrderRows =
+    document.querySelectorAll(
+        ".admin-order-row"
+    );
+
+function filterAdminOrders() {
+
+    if (adminOrderRows.length === 0) {
+        return;
+    }
+
+    const searchValue =
+        adminOrderSearch
+            ? adminOrderSearch.value
+                .toLowerCase()
+                .trim()
+            : "";
+
+    const statusValue =
+        adminStatusFilter
+            ? adminStatusFilter.value
+            : "all";
+
+    adminOrderRows.forEach((row) => {
+
+        const text =
+            row.textContent.toLowerCase();
+
+        const status =
+            row.dataset.adminStatus;
+
+        const searchMatch =
+            text.includes(searchValue);
+
+        const statusMatch =
+            statusValue === "all" ||
+            status === statusValue;
+
+        row.style.display =
+            searchMatch && statusMatch
+                ? ""
+                : "none";
+    });
+}
+
+if (adminOrderSearch) {
+
+    adminOrderSearch.addEventListener(
+        "input",
+        filterAdminOrders
+    );
+}
+
+if (adminStatusFilter) {
+
+    adminStatusFilter.addEventListener(
+        "change",
+        filterAdminOrders
+    );
+}
+
+
+// Add service prototype
+
+const addServiceButton =
+    document.getElementById(
+        "addServiceButton"
+    );
+
+const serviceModal =
+    document.getElementById(
+        "serviceModal"
+    );
+
+const closeServiceModal =
+    document.getElementById(
+        "closeServiceModal"
+    );
+
+if (
+    addServiceButton &&
+    serviceModal
+) {
+
+    addServiceButton.addEventListener(
+        "click",
+        () => {
+
+            serviceModal.classList.add(
+                "active"
+            );
+        }
+    );
+}
+
+if (
+    closeServiceModal &&
+    serviceModal
+) {
+
+    closeServiceModal.addEventListener(
+        "click",
+        () => {
+
+            serviceModal.classList.remove(
+                "active"
+            );
+        }
+    );
+}
+
+
+const serviceForm =
+    document.getElementById(
+        "serviceForm"
+    );
+
+if (serviceForm) {
+
+    serviceForm.addEventListener(
+        "submit",
+        (event) => {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById(
+                    "newServiceName"
+                ).value;
+
+            const category =
+                document.getElementById(
+                    "newServiceCategory"
+                ).value;
+
+            const price =
+                Number(
+                    document.getElementById(
+                        "newServicePrice"
+                    ).value
+                );
+
+            const table =
+                document.getElementById(
+                    "adminServicesTable"
+                );
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>${category}</td>
+                <td>R${price.toFixed(2)}</td>
+                <td>
+                    <span class="status status-completed">
+                        Active
+                    </span>
+                </td>
+                <td>
+                    <button class="admin-action-button">
+                        Edit
+                    </button>
+
+                    <button class="admin-action-button delete-action">
+                        Delete
+                    </button>
+                </td>
+            `;
+
+            table.appendChild(row);
+
+            serviceForm.reset();
+
+            serviceModal.classList.remove(
+                "active"
+            );
+        }
+    );
+}
 
 });
 

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>PrintHub Admin</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="admin-orders.html">Orders</a></li>
+                <li><a href="admin-services.html">Services</a></li>
+                <li><a href="admin-customers.html">Customers</a></li>
+                <li><a href="admin-payments.html">Payments</a></li>
+                <li><a href="admin-reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="dashboard-section">
+        <div class="container">
+
+            <div class="dashboard-header">
+                <div>
+                    <p>ADMINISTRATION</p>
+                    <h2>PrintHub Admin Dashboard</h2>
+                    <span>
+                        Monitor and manage PrintHub operations.
+                    </span>
+                </div>
+
+                <a href="../index.html" class="btn btn-secondary">
+                    View Website
+                </a>
+            </div>
+
+            <div class="admin-stat-grid">
+
+                <article class="admin-stat-card">
+                    <span>📦</span>
+                    <div>
+                        <p>Total Orders</p>
+                        <h3>24</h3>
+                    </div>
+                </article>
+
+                <article class="admin-stat-card">
+                    <span>⏳</span>
+                    <div>
+                        <p>Pending Orders</p>
+                        <h3>6</h3>
+                    </div>
+                </article>
+
+                <article class="admin-stat-card">
+                    <span>👥</span>
+                    <div>
+                        <p>Customers</p>
+                        <h3>18</h3>
+                    </div>
+                </article>
+
+                <article class="admin-stat-card">
+                    <span>💳</span>
+                    <div>
+                        <p>Payments</p>
+                        <h3>R8 750</h3>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <section class="dashboard-panel">
+
+                    <div class="panel-heading">
+                        <h3>Recent Orders</h3>
+                        <a href="admin-orders.html">Manage Orders</a>
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table class="orders-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Order</th>
+                                    <th>Customer</th>
+                                    <th>Service</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>#PH001</td>
+                                    <td>Thabo Nkosi</td>
+                                    <td>A4 Colour Printing</td>
+                                    <td>R250.00</td>
+                                    <td>
+                                        <span class="status status-processing">
+                                            Processing
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#PH002</td>
+                                    <td>Nomsa Dlamini</td>
+                                    <td>Spiral Binding</td>
+                                    <td>R180.00</td>
+                                    <td>
+                                        <span class="status status-ready">
+                                            Ready
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#PH003</td>
+                                    <td>Lebo Mokoena</td>
+                                    <td>Business Cards</td>
+                                    <td>R450.00</td>
+                                    <td>
+                                        <span class="status status-completed">
+                                            Completed
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <aside class="dashboard-panel quick-actions">
+
+                    <h3>Admin Actions</h3>
+
+                    <a href="admin-orders.html" class="quick-action">
+                        <span>📦</span>
+                        <div>
+                            <strong>Manage Orders</strong>
+                            <small>Update printing status</small>
+                        </div>
+                    </a>
+
+                    <a href="admin-services.html" class="quick-action">
+                        <span>🖨️</span>
+                        <div>
+                            <strong>Manage Services</strong>
+                            <small>Add and edit services</small>
+                        </div>
+                    </a>
+
+                    <a href="admin-customers.html" class="quick-action">
+                        <span>👥</span>
+                        <div>
+                            <strong>Customers</strong>
+                            <small>View registered users</small>
+                        </div>
+                    </a>
+
+                    <a href="admin-reports.html" class="quick-action">
+                        <span>📊</span>
+                        <div>
+                            <strong>Reports</strong>
+                            <small>View system activity</small>
+                        </div>
+                    </a>
+
+                </aside>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div>
+            <h3>PrintHub</h3>
+            <p>Administration Portal</p>
+        </div>
+
+        <p>&copy; 2026 PrintHub.</p>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

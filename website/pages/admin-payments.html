@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments | PrintHub Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+<div class="container nav-container">
+    <div class="logo"><h1>PrintHub Admin</h1></div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="admin-dashboard.html">Dashboard</a></li>
+            <li><a href="admin-orders.html">Orders</a></li>
+            <li><a href="admin-services.html">Services</a></li>
+            <li><a href="admin-customers.html">Customers</a></li>
+            <li><a href="admin-payments.html" class="active">Payments</a></li>
+            <li><a href="admin-reports.html">Reports</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<main>
+
+<section class="page-header">
+<div class="container">
+    <p>ADMINISTRATION</p>
+    <h2>Payment Records</h2>
+</div>
+</section>
+
+<section class="admin-content-section">
+<div class="container">
+
+<div class="table-wrapper">
+
+<table class="orders-table admin-table">
+
+<thead>
+<tr>
+    <th>Payment ID</th>
+    <th>Order</th>
+    <th>Customer</th>
+    <th>Method</th>
+    <th>Amount</th>
+    <th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+    <td>PAY001</td>
+    <td>#PH001</td>
+    <td>Thabo Nkosi</td>
+    <td>Card</td>
+    <td>R250.00</td>
+    <td>
+        <span class="status status-completed">
+            Paid
+        </span>
+    </td>
+</tr>
+
+<tr>
+    <td>PAY002</td>
+    <td>#PH002</td>
+    <td>Nomsa Dlamini</td>
+    <td>EFT</td>
+    <td>R180.00</td>
+    <td>
+        <span class="status status-completed">
+            Paid
+        </span>
+    </td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
