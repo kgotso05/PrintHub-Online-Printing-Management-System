@@ -1,0 +1,327 @@
+
+/* PRINTHUB ADMIN PORTAL */
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    padding: 35px 22px;
+    background: var(--bg);
+    box-shadow: var(--raised);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.sidebar-label {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.admin-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.admin-menu a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 15px 18px;
+    border-radius: 14px;
+    font-weight: 500;
+}
+
+.admin-menu a:hover,
+.admin-menu a.active {
+    color: var(--primary-dark);
+    box-shadow: var(--inset);
+}
+
+#adminLogout {
+    margin-top: auto;
+}
+
+.admin-main {
+    flex: 1;
+    min-width: 0;
+    padding: 40px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.admin-header p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.admin-role {
+    padding: 12px 20px;
+    border-radius: 16px;
+    box-shadow: var(--raised);
+    font-weight: 600;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.admin-stat-card {
+    padding: 25px;
+    border-radius: 20px;
+    background: var(--bg);
+    box-shadow: var(--raised);
+}
+
+.admin-stat-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.admin-stat-card h2 {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.admin-panel {
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: var(--raised);
+}
+
+@media (max-width: 1100px) {
+    .admin-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .admin-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .admin-main {
+        padding: 25px 15px;
+    }
+
+    .admin-header {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ADMIN LOGIN */
+
+.admin-login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.admin-login-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 45px 35px;
+    background: var(--bg);
+    border-radius: 24px;
+    box-shadow: var(--raised);
+}
+
+.admin-login-heading {
+    margin: 30px 0;
+}
+
+.admin-login-heading h1 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.admin-login-heading p {
+    color: var(--muted);
+}
+
+.admin-login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin-login-card label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.admin-login-card input {
+    width: 100%;
+}
+
+.admin-login-card button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#adminLoginMessage {
+    font-size: 14px;
+    color: #b42318;
+}
+
+.customer-login-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .admin-login-card {
+        padding: 30px 22px;
+    }
+}
+
+
+/* ADMIN ORDER MANAGEMENT */
+
+#adminOrderCount {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+#adminOrdersMessage {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#adminOrdersTable select {
+    min-width: 135px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: var(--inset);
+}
+
+#adminOrdersTable .btn {
+    white-space: nowrap;
+}
+
+.admin-panel .table-wrapper {
+    overflow-x: auto;
+}
+
+
+/* ADMIN CUSTOMER MANAGEMENT */
+
+.customer-search {
+    margin: 25px 0;
+}
+
+.customer-search input {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 14px;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: var(--inset);
+    outline: none;
+}
+
+.customer-search input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+#customerCount {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+#customersMessage {
+    margin-top: 20px;
+    color: #b42318;
+}
+
+
+/* PRINTING SERVICES MANAGEMENT */
+
+.service-search,
+.service-edit-form input,
+.service-edit-form textarea,
+.service-edit-form select {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 14px;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: var(--inset);
+    font: inherit;
+}
+
+.service-search {
+    max-width: 450px;
+    margin: 20px 0;
+}
+
+.service-edit-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 650px;
+}
+
+.service-edit-form label {
+    font-weight: 600;
+}
+
+.service-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+#servicesMessage {
+    margin-top: 20px;
+}
+
+#editServicePanel[hidden] {
+    display: none;
+}

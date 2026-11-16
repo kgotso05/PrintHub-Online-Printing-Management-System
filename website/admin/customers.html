@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+        <a href="../index.html" class="logo">
+            Print<span>Hub</span>
+        </a>
+
+        <p class="sidebar-label">ADMINISTRATION</p>
+
+        <nav class="admin-menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="orders.html">Manage Orders</a>
+            <a href="customers.html" class="active">Customers</a>
+            <a href="services.html">Services</a>
+        </nav>
+
+        <button id="adminLogout" class="btn">Logout</button>
+    </aside>
+
+    <main class="admin-main">
+
+        <header class="admin-header">
+            <div>
+                <h1>Customer Management</h1>
+                <p>View customers and their printing activity.</p>
+            </div>
+        </header>
+
+        <section class="admin-stats">
+            <article class="admin-stat-card">
+                <p>Customers With Orders</p>
+                <h2 id="totalCustomers">—</h2>
+            </article>
+
+            <article class="admin-stat-card">
+                <p>Total Customer Orders</p>
+                <h2 id="customerOrderCount">—</h2>
+            </article>
+        </section>
+
+        <section class="admin-panel">
+
+            <div class="panel-heading">
+                <h2>Customer Directory</h2>
+                <span id="customerCount">Loading...</span>
+            </div>
+
+            <div class="customer-search">
+                <input
+                    type="search"
+                    id="customerSearch"
+                    placeholder="Search by customer name or email..."
+                    aria-label="Search customers"
+                >
+            </div>
+
+            <div class="table-wrapper">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Full Name</th>
+                            <th>Email Address</th>
+                            <th>Total Orders</th>
+                            <th>Total Order Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customersTable">
+                        <tr>
+                            <td colspan="5">Loading customers...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="customersMessage" role="status"></p>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/admin-customers.js"></script>
+
+</body>
+</html>

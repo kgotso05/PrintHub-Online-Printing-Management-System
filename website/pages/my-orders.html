@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="../index.html" class="logo">Print<span>Hub</span></a>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="place-order.html">Place Order</a>
+        <a href="my-orders.html" class="active">My Orders</a>
+        <button id="logoutBtn" class="btn btn-small">Logout</button>
+    </nav>
+</header>
+
+<main class="orders-container">
+
+    <div class="dashboard-heading">
+        <div>
+            <h1>My Orders</h1>
+            <p>View and track your printing orders.</p>
+        </div>
+
+        <a href="place-order.html" class="btn">
+            + New Order
+        </a>
+    </div>
+
+    <section class="orders-panel">
+
+        <div class="panel-heading">
+            <h2>Order History</h2>
+            <span id="orderCount">Loading...</span>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="allOrders">
+                    <tr>
+                        <td colspan="5">Loading orders...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="ordersMessage" role="status"></p>
+    </section>
+
+    
+<section class="orders-panel order-details-panel"
+         id="orderDetailsPanel" hidden>
+
+    <div class="panel-heading">
+        <h2>Order Details</h2>
+        <button id="closeDetailsBtn"
+                type="button"
+                class="btn btn-small">
+            Close
+        </button>
+    </div>
+
+    <div class="order-details-grid">
+        <div>
+            <p>Order Number</p>
+            <strong id="detailId">—</strong>
+        </div>
+
+        <div>
+            <p>Order Date</p>
+            <strong id="detailDate">—</strong>
+        </div>
+
+        <div>
+            <p>Order Status</p>
+            <strong id="detailStatus">—</strong>
+        </div>
+
+        <div>
+            <p>Total Amount</p>
+            <strong id="detailTotal">—</strong>
+        </div>
+    </div>
+
+    
+<div class="order-items-section">
+    <h3>Printing Services Ordered</h3>
+
+    <div class="table-wrapper">
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Printing Service</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody id="detailItems">
+                <tr>
+                    <td colspan="4">Loading items...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+    <div class="detail-instructions">
+        <h3>Special Instructions</h3>
+        <p id="detailInstructions">—</p>
+    </div>
+</section>
+
+
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/my-orders.js"></script>
+
+</body>
+</html>

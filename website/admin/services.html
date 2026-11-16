@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Services | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<div class="admin-layout">
+    <aside class="admin-sidebar">
+        <a href="../index.html" class="logo">
+            Print<span>Hub</span>
+        </a>
+
+        <p class="sidebar-label">ADMINISTRATION</p>
+
+        <nav class="admin-menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="orders.html">Manage Orders</a>
+            <a href="customers.html">Customers</a>
+            <a href="services.html" class="active">Services</a>
+        </nav>
+
+        <button id="adminLogout" class="btn">Logout</button>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1>Printing Services</h1>
+                <p>Manage service prices, details and availability.</p>
+            </div>
+        </header>
+
+        <section class="admin-stats">
+            <article class="admin-stat-card">
+                <p>Total Services</p>
+                <h2 id="totalServices">—</h2>
+            </article>
+
+            <article class="admin-stat-card">
+                <p>Available Services</p>
+                <h2 id="availableServices">—</h2>
+            </article>
+
+            <article class="admin-stat-card">
+                <p>Disabled Services</p>
+                <h2 id="disabledServices">—</h2>
+            </article>
+        </section>
+
+        <section class="admin-panel">
+            <div class="panel-heading">
+                <h2>Service Directory</h2>
+            </div>
+
+            <input
+                type="search"
+                id="serviceSearch"
+                class="service-search"
+                placeholder="Search printing services..."
+                aria-label="Search printing services"
+            >
+
+            <div class="table-wrapper">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Service</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Availability</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="servicesTable">
+                        <tr>
+                            <td colspan="6">Loading services...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="servicesMessage" role="status"></p>
+        </section>
+
+        
+<section class="admin-panel">
+    <h2>Add New Printing Service</h2>
+    <p>Create a new service for PrintHub customers.</p>
+
+    <form id="createServiceForm" class="service-edit-form">
+
+        <label for="newServiceName">Service Name</label>
+        <input
+            id="newServiceName"
+            type="text"
+            maxlength="150"
+            placeholder="e.g. A3 Colour Printing"
+            required
+        >
+
+        <label for="newServiceDescription">Description</label>
+        <textarea
+            id="newServiceDescription"
+            rows="3"
+            maxlength="2000"
+            placeholder="Describe the printing service"
+        ></textarea>
+
+        <label for="newServiceCategory">Category</label>
+        <select id="newServiceCategory" required>
+            <option value="">Loading categories...</option>
+        </select>
+
+        <label for="newServicePrice">Base Price (R)</label>
+        <input
+            id="newServicePrice"
+            type="number"
+            min="0"
+            max="999999.99"
+            step="0.01"
+            placeholder="0.00"
+            required
+        >
+
+        <button type="submit" class="btn" id="createServiceBtn">
+            Add Printing Service
+        </button>
+
+        <p id="createServiceMessage" role="status"></p>
+    </form>
+</section>
+
+
+        <section class="admin-panel" id="editServicePanel" hidden>
+            <h2>Edit Printing Service</h2>
+
+            <form id="editServiceForm" class="service-edit-form">
+                <input type="hidden" id="editServiceId">
+
+                <label for="editServiceName">Service Name</label>
+                <input id="editServiceName" required maxlength="150">
+
+                <label for="editServiceDescription">Description</label>
+                <textarea id="editServiceDescription"
+                          maxlength="2000" rows="3"></textarea>
+
+                <label for="editServicePrice">Base Price (R)</label>
+                <input id="editServicePrice"
+                       type="number" min="0" max="999999.99"
+                       step="0.01" required>
+
+                <label for="editServiceAvailable">Availability</label>
+                <select id="editServiceAvailable">
+                    <option value="1">Available</option>
+                    <option value="0">Disabled</option>
+                </select>
+
+                <div class="service-form-actions">
+                    <button type="submit" class="btn" id="saveServiceBtn">
+                        Save Changes
+                    </button>
+                    <button type="button" class="btn"
+                            id="cancelServiceEdit">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/admin-services.js"></script>
+</body>
+</html>

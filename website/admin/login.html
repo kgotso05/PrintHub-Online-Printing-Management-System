@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | PrintHub</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<main class="admin-login-container">
+    <section class="admin-login-card">
+
+        <a href="../index.html" class="logo">
+            Print<span>Hub</span>
+        </a>
+
+        <div class="admin-login-heading">
+            <h1>Administrator Login</h1>
+            <p>Sign in to manage PrintHub operations.</p>
+        </div>
+
+        <form id="adminLoginForm">
+            <label for="adminEmail">Email Address</label>
+            <input
+                type="email"
+                id="adminEmail"
+                placeholder="Enter admin email"
+                autocomplete="username"
+                required
+            >
+
+            <label for="adminPassword">Password</label>
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+            >
+
+            <p id="adminLoginMessage" role="status"></p>
+
+            <button type="submit" class="btn" id="adminLoginButton">
+                Sign In as Administrator
+            </button>
+        </form>
+
+        <a href="../pages/login.html" class="customer-login-link">
+            Customer Login
+        </a>
+    </section>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/admin-login.js"></script>
+
+</body>
+</html>

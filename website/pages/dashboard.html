@@ -1,213 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Dashboard | PrintHub</title>
+    <title>Dashboard | PrintHub</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-<header class="main-header">
-    <div class="container nav-container">
-        <div class="logo">
-            <h1>PrintHub</h1>
-        </div>
+<header class="navbar">
+    <a href="../index.html" class="logo">Print<span>Hub</span></a>
 
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="dashboard.html" class="active">Dashboard</a></li>
-                <li><a href="orders.html">My Orders</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="place-order.html">Place Order</a>
+        <a href="my-orders.html">My Orders</a>
+        <button id="logoutBtn" class="btn btn-small">Logout</button>
+    </nav>
 </header>
 
-<main>
-
-    <section class="dashboard-section">
-        <div class="container">
-
-            <div class="dashboard-header">
-                <div>
-                    <p>CUSTOMER DASHBOARD</p>
-                    <h2>Welcome back, Customer</h2>
-                    <span>Manage your printing activity from one place.</span>
-                </div>
-
-                <a href="quotation.html" class="btn btn-primary">
-                    + Get a Quote
-                </a>
-            </div>
-
-            <div class="dashboard-cards">
-
-                <article class="dashboard-card">
-                    <span>📦</span>
-                    <div>
-                        <p>Active Orders</p>
-                        <h3>2</h3>
-                    </div>
-                </article>
-
-                <article class="dashboard-card">
-                    <span>✅</span>
-                    <div>
-                        <p>Completed Orders</p>
-                        <h3>5</h3>
-                    </div>
-                </article>
-
-                <article class="dashboard-card">
-                    <span>💰</span>
-                    <div>
-                        <p>Total Spent</p>
-                        <h3>R1 850.00</h3>
-                    </div>
-                </article>
-
-            </div>
-
-            <div class="dashboard-grid">
-
-                <section class="dashboard-panel">
-
-                    <div class="panel-heading">
-                        <h3>Recent Orders</h3>
-                        <a href="orders.html">View All</a>
-                    </div>
-
-                    <div class="table-wrapper">
-
-                        <table class="orders-table">
-                            <thead>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Service</th>
-                                    <th>Date</th>
-                                    <th>Total</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>#PH001</td>
-                                    <td>A4 Colour Printing</td>
-                                    <td>04 Sep 2026</td>
-                                    <td>R250.00</td>
-                                    <td>
-                                        <span class="status status-processing">
-                                            Processing
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <a href="tracking.html?id=PH001">
-                                            Track
-                                        </a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>#PH002</td>
-                                    <td>Spiral Binding</td>
-                                    <td>02 Sep 2026</td>
-                                    <td>R180.00</td>
-                                    <td>
-                                        <span class="status status-ready">
-                                            Ready
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <a href="tracking.html?id=PH002">
-                                            Track
-                                        </a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>#PH003</td>
-                                    <td>Business Cards</td>
-                                    <td>27 Aug 2026</td>
-                                    <td>R450.00</td>
-                                    <td>
-                                        <span class="status status-completed">
-                                            Completed
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <a href="orders.html">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </section>
-
-                <aside class="dashboard-panel quick-actions">
-
-                    <h3>Quick Actions</h3>
-
-                    <a href="services.html" class="quick-action">
-                        <span>🖨️</span>
-                        <div>
-                            <strong>Browse Services</strong>
-                            <small>Explore printing options</small>
-                        </div>
-                    </a>
-
-                    <a href="quotation.html" class="quick-action">
-                        <span>🧾</span>
-                        <div>
-                            <strong>Request Quote</strong>
-                            <small>Calculate printing costs</small>
-                        </div>
-                    </a>
-
-                    <a href="tracking.html" class="quick-action">
-                        <span>📍</span>
-                        <div>
-                            <strong>Track Order</strong>
-                            <small>Check current progress</small>
-                        </div>
-                    </a>
-
-                    <a href="orders.html" class="quick-action">
-                        <span>📚</span>
-                        <div>
-                            <strong>Order History</strong>
-                            <small>View previous orders</small>
-                        </div>
-                    </a>
-
-                </aside>
-
-            </div>
-
+<main class="dashboard-container">
+    <div class="dashboard-heading">
+        <div>
+            <h1>My Dashboard</h1>
+            <p>Manage and track your printing orders.</p>
         </div>
-    </section>
+        <a href="place-order.html" class="btn">+ New Order</a>
+    </div>
 
+    
+<section class="stats-grid">
+
+    <article class="stat-card">
+        <div class="stat-card-top">
+            <span class="stat-icon">◷</span>
+            <span class="stat-label">In Progress</span>
+        </div>
+        <h2 id="activeOrders">—</h2>
+        <p>Active printing orders</p>
+    </article>
+
+    <article class="stat-card">
+        <div class="stat-card-top">
+            <span class="stat-icon">✓</span>
+            <span class="stat-label">Completed</span>
+        </div>
+        <h2 id="completedOrders">—</h2>
+        <p>Successfully completed orders</p>
+    </article>
+
+    <article class="stat-card">
+        <div class="stat-card-top">
+            <span class="stat-icon">▤</span>
+            <span class="stat-label">Total Orders</span>
+        </div>
+        <h2 id="totalOrders">—</h2>
+        <p>All printing orders placed</p>
+    </article>
+
+</section>
+
+
+    <section class="orders-panel">
+        <div class="panel-heading">
+            <h2>Recent Orders</h2>
+            <a href="my-orders.html">View All</a>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="recentOrders">
+                    <tr>
+                        <td colspan="4">Loading orders...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="dashboardMessage" role="status"></p>
+    </section>
 </main>
 
-<footer class="main-footer">
-    <div class="container footer-content">
-        <div>
-            <h3>PrintHub</h3>
-            <p>Online Printing Management System</p>
-        </div>
-
-        <p>&copy; 2026 PrintHub. All rights reserved.</p>
-    </div>
-</footer>
-
+<script src="../js/api.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>

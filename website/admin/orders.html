@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Orders | PrintHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+    <aside class="admin-sidebar">
+        <a href="../index.html" class="logo">Print<span>Hub</span></a>
+        <p class="sidebar-label">ADMINISTRATION</p>
+
+        <nav class="admin-menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="orders.html" class="active">Manage Orders</a>
+            <a href="customers.html">Customers</a>
+            <a href="services.html">Services</a>
+        </nav>
+
+        <button id="adminLogout" class="btn">Logout</button>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1>Manage Orders</h1>
+                <p>Monitor customer printing orders and update their progress.</p>
+            </div>
+        </header>
+
+        <section class="admin-panel">
+            <div class="panel-heading">
+                <h2>Customer Orders</h2>
+                <span id="adminOrderCount">Loading...</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Current Status</th>
+                            <th>Total</th>
+                            <th>Update Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminOrdersTable">
+                        <tr>
+                            <td colspan="6">Loading orders...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="adminOrdersMessage" role="status"></p>
+        </section>
+    </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/admin-orders.js"></script>
+</body>
+</html>
